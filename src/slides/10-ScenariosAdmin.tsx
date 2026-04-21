@@ -12,7 +12,7 @@ export function Slide10ScenariosAdmin() {
       ariaLabel="Admin Use Cases"
       kicker="Use Cases · group 4 of 4"
       title="Admin"
-      subtitle="Catalog, sections, drag-drop timetable with conflict scanning, terms, user provisioning, reports, and escalations."
+      subtitle="Courses, sections, drag-drop timetable with conflict scanning, terms, user provisioning, reports, and escalations."
     >
       <motion.div
         className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 max-h-full overflow-y-auto scrollpanel pr-2"

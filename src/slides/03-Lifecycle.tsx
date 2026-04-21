@@ -21,8 +21,8 @@ const phases = [
     color: '#7C8BFF',
     steps: [
       'Secure first-time login (OTP)',
-      'Browse catalog, real-time eligibility',
-      'Build conflict-free cart and submit',
+      'Browse courses, real-time eligibility',
+      'Create conflict-free request and submit',
     ],
   },
   {

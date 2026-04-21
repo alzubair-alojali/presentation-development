@@ -33,12 +33,12 @@ const stats: Stat[] = [
     viz: 'dots',
   },
   {
-    label: 'System Scenarios',
-    value: 22,
+    label: 'Use Case Specs',
+    value: 21,
     icon: MousePointerClick,
     color: '#FFB86B',
     gradient: 'linear-gradient(135deg, #FFB86B 0%, #FF6B7A 100%)',
-    caption: 'Twenty-two detailed flows (S01–S22) — pre-conditions, steps, alternatives.',
+    caption: 'Twenty-one detailed flows (S01–S21) — pre-conditions, steps, alternatives.',
     viz: 'lines',
   },
 ];

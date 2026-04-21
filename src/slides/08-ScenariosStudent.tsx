@@ -12,7 +12,7 @@ export function Slide08ScenariosStudent() {
       ariaLabel="Student Use Cases"
       kicker="Use Cases · group 2 of 4"
       title="Student"
-      subtitle="Browse the catalog, build a conflict-free cart, submit the request, and manage it afterwards. Click any card to expand."
+      subtitle="Browse the courses, create a conflict-free request, submit it, and manage it afterwards. Click any card to expand."
     >
       <motion.div
         className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 max-h-full overflow-y-auto scrollpanel pr-2"

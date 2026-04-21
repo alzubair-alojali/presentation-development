@@ -10,8 +10,8 @@ const journeys = [
     color: '#FFB86B',
     gradient: 'linear-gradient(135deg, #FFB86B 0%, #FF6B7A 100%)',
     body:
-      'The Admin configures the catalog, provisions users, and opens the registration window. Throughout the term, they monitor system overrides, manage unresponsive advisors, and ultimately close registration to archive the term.',
-    beats: ['Configure catalog', 'Provision users', 'Monitor overrides', 'Handle escalations', 'Close & archive'],
+      'The Admin configures the courses, provisions users, and opens the registration window. Throughout the term, they monitor system overrides, manage unresponsive advisors, and ultimately close registration to archive the term.',
+    beats: ['Configure courses', 'Provision users', 'Monitor overrides', 'Handle escalations', 'Close & archive'],
   },
   {
     icon: GraduationCap,
@@ -19,8 +19,8 @@ const journeys = [
     color: '#7C8BFF',
     gradient: 'linear-gradient(135deg, #7C8BFF 0%, #B980FF 100%)',
     body:
-      'After authenticating, the Student browses the catalog using real-time eligibility checks to build a conflict-free schedule. They submit this cart to their Advisor for approval and can later request withdrawals or section swaps.',
-    beats: ['Authenticate', 'Browse + eligibility', 'Build conflict-free cart', 'Submit request', 'Withdraw / swap'],
+      'After authenticating, the Student browses the courses using real-time eligibility checks to create a conflict-free schedule. They submit this request to their Advisor for approval and can later request withdrawals or section swaps.',
+    beats: ['Authenticate', 'Browse + eligibility', 'Create conflict-free request', 'Submit request', 'Withdraw / swap'],
   },
   {
     icon: UserCheck,
