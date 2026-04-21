@@ -66,12 +66,9 @@ export function Slide05UseCaseDiagram() {
     >
       <header className="mb-4 flex items-baseline justify-between gap-8">
         <div>
-          <div className="text-[11px] uppercase tracking-[0.24em] text-ink-tertiary font-medium mb-2">
+          <div className="text-[11px] uppercase tracking-[0.24em] text-ink-tertiary font-medium">
             Use Case Diagram · part 2 of 2
           </div>
-          <h2 className="font-display font-bold text-h2 text-ink-primary leading-tight">
-            Hover an actor to see their world
-          </h2>
         </div>
         <div className="hidden md:flex items-center gap-4 text-[11px] font-mono tabular text-ink-tertiary uppercase tracking-widest">
           <span className="flex items-center gap-2">
