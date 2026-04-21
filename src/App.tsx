@@ -1,5 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Grid } from './components/Grid';
 import { TopBar } from './components/TopBar';
 import { BottomNav } from './components/BottomNav';
@@ -16,6 +15,39 @@ import { Slide09ScenariosAdvisor } from './slides/09-ScenariosAdvisor';
 import { Slide10ScenariosAdmin } from './slides/10-ScenariosAdmin';
 import { Slide11Screens } from './slides/11-Screens';
 import { Slide12Closing } from './slides/12-Closing';
+
+/**
+ * Slide transition: class-based entry animation that self-removes after its
+ * duration. If animations are paused (background tab / preview eval), the
+ * element always ends at the default (correct) layout once the class drops.
+ */
+function SlideTransition({
+  children,
+  direction,
+}: {
+  children: React.ReactNode;
+  direction: 1 | -1;
+}) {
+  const [animating, setAnimating] = useState(true);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const id = window.setTimeout(() => setAnimating(false), 560);
+    return () => window.clearTimeout(id);
+  }, []);
+
+  const cls = animating
+    ? direction === 1
+      ? 'slide-enter-right'
+      : 'slide-enter-left'
+    : '';
+
+  return (
+    <div ref={ref} className={`absolute inset-0 ${cls}`}>
+      {children}
+    </div>
+  );
+}
 
 // Deck order matches the agenda: System Scenarios → Use Cases → Use Case Diagram.
 const slides = [
@@ -128,19 +160,9 @@ export default function App() {
       </div>
 
       <div className="relative z-10 h-full w-full">
-        <motion.div
-          key={slides[index].key}
-          initial={{ opacity: 0, x: direction * 60, filter: 'blur(6px)' }}
-          animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
-          transition={{
-            x: { type: 'spring', stiffness: 160, damping: 26, mass: 0.9 },
-            opacity: { duration: 0.32 },
-            filter: { duration: 0.32 },
-          }}
-          className="absolute inset-0"
-        >
+        <SlideTransition key={slides[index].key} direction={direction}>
           {slides[index].el}
-        </motion.div>
+        </SlideTransition>
       </div>
 
       <div
