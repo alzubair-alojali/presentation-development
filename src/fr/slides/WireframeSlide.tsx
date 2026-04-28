@@ -26,10 +26,13 @@ const groupLabel: Record<Wireframe['group'], string> = {
   admin: 'Admin Flow',
 };
 
+const WF_W = 1440;
+const WF_H = 900;
+
 /**
- * Wireframe slide — embeds the original 1440×900 React component into
- * a "paper card" that contrasts cleanly against the dark deck. The card
- * is auto-scaled to fit the available space.
+ * Wireframe slide — embeds the original 1440×900 React component and
+ * sizes the paper card to hug the wireframe tightly (no left/right
+ * letterboxing inside the card).
  */
 export function WireframeSlide({ wireframe, index, total }: Props) {
   const Comp = (wf as Record<string, React.ComponentType>)[wireframe.component];
@@ -40,9 +43,9 @@ export function WireframeSlide({ wireframe, index, total }: Props) {
     const update = () => {
       if (!stageRef.current) return;
       const { width, height } = stageRef.current.getBoundingClientRect();
-      const sx = width / 1440;
-      const sy = height / 900;
-      setScale(Math.max(0.25, Math.min(sx, sy)));
+      const sx = width / WF_W;
+      const sy = height / WF_H;
+      setScale(Math.max(0.2, Math.min(sx, sy)));
     };
     update();
     const ro = new ResizeObserver(update);
@@ -79,26 +82,32 @@ export function WireframeSlide({ wireframe, index, total }: Props) {
           <span className="text-[12.5px] text-ink-secondary">{wireframe.description}</span>
         </div>
 
+        {/* Stage = available area; paper is sized to exactly the scaled wireframe */}
         <div
           ref={stageRef}
-          className="wf-paper flex-1 min-h-0 rounded-lg overflow-hidden flex items-center justify-center relative"
-          style={{
-            border: '1px solid rgba(255,255,255,0.08)',
-            boxShadow: '0 24px 70px -20px rgba(0,0,0,0.55)',
-            background: '#f4f1ea',
-          }}
+          className="flex-1 min-h-0 flex items-center justify-center"
         >
           {Comp ? (
             <div
+              className="wf-paper rounded-lg overflow-hidden relative"
               style={{
-                width: 1440,
-                height: 900,
-                transform: `scale(${scale})`,
-                transformOrigin: 'center center',
-                flexShrink: 0,
+                width: WF_W * scale,
+                height: WF_H * scale,
+                border: '1px solid rgba(255,255,255,0.10)',
+                boxShadow: '0 24px 70px -20px rgba(0,0,0,0.55)',
+                background: '#f4f1ea',
               }}
             >
-              <Comp />
+              <div
+                style={{
+                  width: WF_W,
+                  height: WF_H,
+                  transform: `scale(${scale})`,
+                  transformOrigin: 'top left',
+                }}
+              >
+                <Comp />
+              </div>
             </div>
           ) : (
             <div className="text-[#c0392b] font-mono text-sm p-4">

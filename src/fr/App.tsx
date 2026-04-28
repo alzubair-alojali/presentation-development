@@ -7,13 +7,13 @@ import { Slide01Title } from './slides/01-Title';
 import { Slide02Agenda } from './slides/02-Agenda';
 import { Slide03Overview } from './slides/03-Overview';
 import { Slide04FrAtAGlance } from './slides/04-FrAtAGlance';
-import { Slide05FrHighlights } from './slides/05-FrHighlights';
 import { Slide06WireframesIntro } from './slides/06-WireframesIntro';
 import { WireframeSlide } from './slides/WireframeSlide';
-import { Slide99OutOfScope } from './slides/99-OutOfScope';
+import { FrModuleSlide } from './slides/FrModuleSlide';
 import { Slide999Closing } from './slides/999-Closing';
 
 import { wireframes } from './data/wireframes';
+import { allFrPages } from './data/fr-full';
 
 /* Same slide-transition primitive used in the main deck. */
 function SlideTransition({
@@ -39,26 +39,35 @@ function SlideTransition({
   );
 }
 
-const fixedSlides = [
+const introSlides = [
   { key: 'title',     el: <Slide01Title /> },
   { key: 'agenda',    el: <Slide02Agenda /> },
   { key: 'overview',  el: <Slide03Overview /> },
   { key: 'fr-glance', el: <Slide04FrAtAGlance /> },
-  { key: 'fr-hi',     el: <Slide05FrHighlights /> },
-  { key: 'wf-intro',  el: <Slide06WireframesIntro /> },
 ];
+
+// One slide per module (split if a module has more than 9 items).
+const frModuleSlides = allFrPages.map(p => ({
+  key: `fr-${p.module.code}-${p.page}`,
+  el: <FrModuleSlide page={p} />,
+}));
+
+const wireframeIntroSlide = [{ key: 'wf-intro', el: <Slide06WireframesIntro /> }];
 
 const wireframeSlides = wireframes.map((w, i) => ({
   key: `wf-${w.component}`,
   el: <WireframeSlide wireframe={w} index={i + 1} total={wireframes.length} />,
 }));
 
-const closingSlides = [
-  { key: 'out',       el: <Slide99OutOfScope /> },
-  { key: 'thanks',    el: <Slide999Closing /> },
-];
+const closingSlides = [{ key: 'thanks', el: <Slide999Closing /> }];
 
-const slides = [...fixedSlides, ...wireframeSlides, ...closingSlides];
+const slides = [
+  ...introSlides,
+  ...frModuleSlides,
+  ...wireframeIntroSlide,
+  ...wireframeSlides,
+  ...closingSlides,
+];
 
 export default function App() {
   const [index, setIndex] = useState(0);
