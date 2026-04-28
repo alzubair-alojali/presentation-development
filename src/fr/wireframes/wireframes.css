@@ -1,0 +1,147 @@
+/* Wireframe primitives — copied from system-design/login-wireframes.html.
+   Hand-drawn / sketchy fidelity on a warm-beige paper background.
+   Used inside .wf-paper containers so it stays visually contained
+   when shown on a dark slide. */
+
+.wf-paper {
+  font-family: 'Kalam', cursive;
+  background: #f4f1ea;
+  color: #1a1a1a;
+}
+
+.wf-card {
+  background: #fdfcf8;
+  border: 2px solid #1a1a1a;
+  border-radius: 6px;
+  box-shadow: 4px 4px 0 #1a1a1a;
+  box-sizing: border-box;
+}
+.wf-card.soft {
+  border: 1.5px solid #2a2a2a;
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.15);
+}
+
+.wf-logo {
+  width: 64px;
+  height: 64px;
+  border: 2px dashed #555;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  color: #777;
+  text-align: center;
+  line-height: 1.1;
+  background: repeating-linear-gradient(45deg, transparent, transparent 6px, rgba(0,0,0,0.04) 6px, rgba(0,0,0,0.04) 7px);
+}
+.wf-logo.square { border-radius: 4px; }
+.wf-logo.shield { border-radius: 8px 8px 50% 50% / 8px 8px 30% 30%; }
+
+.wf-input {
+  border: 1.5px solid #2a2a2a;
+  border-radius: 4px;
+  padding: 12px 14px;
+  background: #fff;
+  font-family: 'Kalam', cursive;
+  font-size: 16px;
+  color: #888;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-sizing: border-box;
+}
+.wf-input .ph { flex: 1; }
+.wf-input .eye {
+  width: 22px;
+  height: 16px;
+  border: 1.5px solid #2a2a2a;
+  border-radius: 50% / 80%;
+  position: relative;
+  flex-shrink: 0;
+}
+.wf-input .eye::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: 6px; height: 6px;
+  background: #2a2a2a;
+  border-radius: 50%;
+}
+.wf-label {
+  font-family: 'Architects Daughter', cursive;
+  font-size: 13px;
+  color: #444;
+  margin-bottom: 6px;
+  display: block;
+}
+.wf-btn {
+  background: #1a1a1a;
+  color: #fff;
+  border: 2px solid #1a1a1a;
+  border-radius: 4px;
+  padding: 14px;
+  font-family: 'Kalam', cursive;
+  font-weight: 700;
+  font-size: 17px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 #888;
+}
+.wf-btn.outline { background: #fff; color: #1a1a1a; }
+.wf-link {
+  font-family: 'Caveat', cursive;
+  font-size: 18px;
+  color: #2a4d8f;
+  text-decoration: underline wavy;
+  text-underline-offset: 3px;
+  text-align: center;
+}
+.wf-title {
+  font-family: 'Architects Daughter', cursive;
+  font-size: 26px;
+  margin: 0;
+  color: #1a1a1a;
+}
+.wf-subtitle {
+  font-family: 'Kalam', cursive;
+  font-size: 15px;
+  color: #555;
+  margin: 4px 0 0;
+  font-weight: 300;
+}
+.wf-footer {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: #888;
+  text-align: center;
+}
+.annot {
+  position: absolute;
+  font-family: 'Caveat', cursive;
+  font-size: 16px;
+  color: #c0392b;
+  pointer-events: none;
+}
+.annot .arrow { display: inline-block; }
+.page {
+  width: 1440px;
+  height: 900px;
+  background: #f7f5ef;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-family: 'Kalam', cursive;
+  color: #1a1a1a;
+}
+.sketch-underline { position: relative; display: inline-block; }
+.sketch-underline::after {
+  content: '';
+  position: absolute;
+  left: -2px; right: -2px; bottom: -4px;
+  height: 4px;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 4'><path d='M0 2 Q 25 0, 50 2 T 100 2' stroke='%231a1a1a' fill='none' stroke-width='1.2'/></svg>") repeat-x;
+  background-size: 100px 4px;
+}
