@@ -1,0 +1,361 @@
+/* ─────────────────────────────────────────────────────────────
+   Dark-theme reskin for the wireframe components.
+   Reuses the same JSX from fr/wireframes/components.jsx but
+   overrides every paper/sketchy decision so the screens match
+   the deck's midnight-navy + cyan/violet design system.
+   Scoped under .wf-dark.
+   ───────────────────────────────────────────────────────────── */
+
+.wf-dark {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #F4F7FF;
+  background: transparent;
+  --wd-bg:        #060B1A;
+  --wd-elev:      rgba(255, 255, 255, 0.04);
+  --wd-elev-2:    rgba(255, 255, 255, 0.07);
+  --wd-border:    rgba(255, 255, 255, 0.10);
+  --wd-border-2:  rgba(255, 255, 255, 0.16);
+  --wd-ink:       #F4F7FF;
+  --wd-ink-2:     #A7B3CC;
+  --wd-ink-3:     #6E7A94;
+  --wd-cyan:      #4CC4FF;
+  --wd-violet:    #7C8BFF;
+  --wd-warm:      #FFB86B;
+  --wd-danger:    #FF6B7A;
+  --wd-success:   #4ADE80;
+}
+
+/* Force Inter on every wireframe element (overrides Architects Daughter / Caveat / Kalam inline) */
+.wf-dark, .wf-dark * {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+}
+.wf-dark *[style*="JetBrains Mono"],
+.wf-dark *[style*="monospace"] {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace !important;
+}
+
+/* ───────────── Page roots ───────────── */
+.wf-dark .page,
+.wf-dark [style*="background: '#f7f5ef'"],
+.wf-dark [style*="background:'#f7f5ef'"],
+.wf-dark [style*="background: '#f4f1ea'"],
+.wf-dark [style*="background:'#f4f1ea'"],
+.wf-dark [style*="background: #f7f5ef"],
+.wf-dark [style*="background: #f4f1ea"] {
+  background: var(--wd-bg) !important;
+  color: var(--wd-ink);
+  background-image:
+    linear-gradient(rgba(110, 160, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(110, 160, 255, 0.05) 1px, transparent 1px) !important;
+  background-size: 56px 56px !important;
+}
+
+/* ───────────── Cards (was paper white) ───────────── */
+.wf-dark .wf-card,
+.wf-dark [style*="background: '#fdfcf8'"],
+.wf-dark [style*="background:'#fdfcf8'"],
+.wf-dark [style*="background: #fdfcf8"] {
+  background: var(--wd-elev) !important;
+  border-color: var(--wd-border) !important;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 18px 50px -18px rgba(0, 0, 0, 0.7) !important;
+  color: var(--wd-ink) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.wf-dark .wf-card.soft {
+  background: var(--wd-elev) !important;
+  border-color: var(--wd-border) !important;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 8px 24px -12px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* ───────────── Brand panels (was beige) ───────────── */
+.wf-dark [style*="background: '#ebe6d8'"],
+.wf-dark [style*="background:'#ebe6d8'"],
+.wf-dark [style*="background: '#efebe0'"],
+.wf-dark [style*="background:'#efebe0'"] {
+  background: linear-gradient(180deg, rgba(76, 196, 255, 0.10), rgba(124, 139, 255, 0.06)) !important;
+  border-color: rgba(76, 196, 255, 0.22) !important;
+  color: var(--wd-ink) !important;
+}
+
+/* ───────────── Header bands (warm tan) ───────────── */
+.wf-dark [style*="background: '#f4f0e0'"],
+.wf-dark [style*="background:'#f4f0e0'"] {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border-color: var(--wd-border) !important;
+}
+
+/* ───────────── White surfaces (modal cards, etc) ───────────── */
+.wf-dark [style*="background: '#fff'"],
+.wf-dark [style*="background:'#fff'"],
+.wf-dark [style*="background: #fff"],
+.wf-dark [style*="background: 'white'"],
+.wf-dark [style*="background:'white'"] {
+  background: var(--wd-elev-2) !important;
+  border-color: var(--wd-border) !important;
+}
+
+/* ───────────── Inputs ───────────── */
+.wf-dark .wf-input {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border-color: var(--wd-border) !important;
+  color: var(--wd-ink-2) !important;
+  border-radius: 8px !important;
+}
+.wf-dark .wf-input .eye {
+  border-color: var(--wd-border-2) !important;
+}
+.wf-dark .wf-input .eye::after {
+  background: var(--wd-ink-2) !important;
+}
+
+/* ───────────── Buttons ───────────── */
+.wf-dark .wf-btn {
+  background: linear-gradient(135deg, var(--wd-cyan) 0%, var(--wd-violet) 100%) !important;
+  border: 1px solid rgba(76, 196, 255, 0.45) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.18) inset,
+    0 10px 30px -10px rgba(76, 196, 255, 0.45) !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  border-radius: 8px !important;
+  transform: none !important;
+}
+.wf-dark .wf-btn.outline {
+  background: rgba(255, 255, 255, 0.04) !important;
+  color: var(--wd-ink) !important;
+  border: 1px solid var(--wd-border-2) !important;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset !important;
+}
+
+/* ───────────── Links ───────────── */
+.wf-dark .wf-link {
+  color: var(--wd-cyan) !important;
+  text-decoration: underline !important;
+  text-decoration-color: rgba(76, 196, 255, 0.5) !important;
+  text-underline-offset: 4px !important;
+  font-weight: 500 !important;
+}
+
+/* ───────────── Titles + labels ───────────── */
+.wf-dark .wf-title {
+  color: var(--wd-ink) !important;
+  font-family: 'Satoshi', 'Inter', sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.015em !important;
+}
+.wf-dark .wf-subtitle {
+  color: var(--wd-ink-2) !important;
+  font-weight: 400 !important;
+}
+.wf-dark .wf-label {
+  color: var(--wd-ink-3) !important;
+  font-size: 11px !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  font-weight: 600 !important;
+}
+.wf-dark .wf-footer {
+  color: var(--wd-ink-3) !important;
+  font-family: 'JetBrains Mono', monospace !important;
+}
+
+/* ───────────── Logo ───────────── */
+.wf-dark .wf-logo {
+  border-color: rgba(76, 196, 255, 0.40) !important;
+  background:
+    linear-gradient(135deg, rgba(76, 196, 255, 0.12), rgba(124, 139, 255, 0.08)),
+    repeating-linear-gradient(45deg, transparent 0 6px, rgba(76, 196, 255, 0.06) 6px 7px) !important;
+  color: var(--wd-cyan) !important;
+}
+
+/* ───────────── Annotations (were red marker) ───────────── */
+.wf-dark .annot {
+  color: var(--wd-warm) !important;
+  font-size: 11px !important;
+  letter-spacing: 0.04em !important;
+}
+
+/* ───────────── Sketch underline → gradient bar ───────────── */
+.wf-dark .sketch-underline::after {
+  background: linear-gradient(90deg, var(--wd-cyan), var(--wd-violet)) !important;
+  height: 2px !important;
+  border-radius: 2px !important;
+}
+
+/* ───────────── Generic borders (heavy black) ───────────── */
+.wf-dark [style*="2px solid #1a1a1a"],
+.wf-dark [style*="2px solid '#1a1a1a'"],
+.wf-dark [style*="2px solid rgb(26, 26, 26)"] {
+  border: 1px solid var(--wd-border) !important;
+}
+.wf-dark [style*="1.5px solid #1a1a1a"],
+.wf-dark [style*="1.5px solid '#1a1a1a'"],
+.wf-dark [style*="1.5px solid #2a2a2a"],
+.wf-dark [style*="1.5px solid '#2a2a2a'"] {
+  border-color: var(--wd-border) !important;
+}
+.wf-dark [style*="borderRight: '2px solid #1a1a1a'"],
+.wf-dark [style*="borderRight: 2px solid #1a1a1a"] {
+  border-right: 1px solid var(--wd-border) !important;
+}
+.wf-dark [style*="borderBottom: '1.5px solid #1a1a1a'"],
+.wf-dark [style*="borderBottom: 1.5px solid #1a1a1a"],
+.wf-dark [style*="borderBottom: '2px solid #1a1a1a'"],
+.wf-dark [style*="borderBottom: 2px solid #1a1a1a"] {
+  border-bottom: 1px solid var(--wd-border) !important;
+}
+.wf-dark [style*="borderTop: '1.5px solid #1a1a1a'"],
+.wf-dark [style*="borderTop: 1.5px solid #1a1a1a"] {
+  border-top: 1px solid var(--wd-border) !important;
+}
+.wf-dark [style*="borderLeft: '1.5px solid #1a1a1a'"],
+.wf-dark [style*="borderLeft: 1.5px solid #1a1a1a"] {
+  border-left: 1px solid var(--wd-border) !important;
+}
+
+/* Dashed dividers (academic-style) */
+.wf-dark [style*="1.5px dashed #999"],
+.wf-dark [style*="1.5px dashed #777"],
+.wf-dark [style*="2px dashed #777"],
+.wf-dark [style*="2px dashed #555"] {
+  border-color: var(--wd-border-2) !important;
+}
+
+/* ───────────── Box shadows (heavy black offsets) ───────────── */
+.wf-dark [style*="box-shadow: 4px 4px 0 #1a1a1a"],
+.wf-dark [style*="boxShadow: '4px 4px 0 #1a1a1a'"],
+.wf-dark [style*="boxShadow:'4px 4px 0 #1a1a1a'"],
+.wf-dark [style*="boxShadow: '6px 6px 0 #1a1a1a'"],
+.wf-dark [style*="boxShadow: '3px 3px 0 #888'"],
+.wf-dark [style*="boxShadow: '2px 2px 0 rgba(0,0,0,0.15)'"] {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 18px 50px -18px rgba(0, 0, 0, 0.7) !important;
+}
+
+/* ───────────── Text color overrides ───────────── */
+.wf-dark [style*="color: '#888'"],
+.wf-dark [style*="color:'#888'"],
+.wf-dark [style*="color: #888"],
+.wf-dark [style*="color: '#777'"],
+.wf-dark [style*="color:'#777'"],
+.wf-dark [style*="color: #777"],
+.wf-dark [style*="color: '#666'"],
+.wf-dark [style*="color:'#666'"],
+.wf-dark [style*="color: #666"],
+.wf-dark [style*="color: '#555'"],
+.wf-dark [style*="color:'#555'"],
+.wf-dark [style*="color: #555"] {
+  color: var(--wd-ink-3) !important;
+}
+.wf-dark [style*="color: '#444'"],
+.wf-dark [style*="color:'#444'"],
+.wf-dark [style*="color: #444"],
+.wf-dark [style*="color: '#333'"],
+.wf-dark [style*="color:'#333'"],
+.wf-dark [style*="color: #333"] {
+  color: var(--wd-ink-2) !important;
+}
+.wf-dark [style*="color: '#222'"],
+.wf-dark [style*="color:'#222'"],
+.wf-dark [style*="color: #222"],
+.wf-dark [style*="color: '#1a1a1a'"],
+.wf-dark [style*="color:'#1a1a1a'"],
+.wf-dark [style*="color: #1a1a1a"] {
+  color: var(--wd-ink) !important;
+}
+.wf-dark [style*="color: '#bbb'"],
+.wf-dark [style*="color:'#bbb'"],
+.wf-dark [style*="color: #bbb"],
+.wf-dark [style*="color: '#aaa'"],
+.wf-dark [style*="color:'#aaa'"],
+.wf-dark [style*="color: #aaa"] {
+  color: var(--wd-ink-3) !important;
+  opacity: 0.7;
+}
+
+/* ───────────── Status / accent reds ───────────── */
+.wf-dark [style*="color: '#c0392b'"],
+.wf-dark [style*="color:'#c0392b'"],
+.wf-dark [style*="color: #c0392b"],
+.wf-dark [style*="background: '#c0392b'"],
+.wf-dark [style*="background: #c0392b"] {
+  color: var(--wd-warm) !important;
+}
+.wf-dark [style*="background: '#c0392b'"],
+.wf-dark [style*="background:'#c0392b'"] {
+  background: var(--wd-warm) !important;
+}
+
+/* ───────────── Link blue → cyan accent ───────────── */
+.wf-dark [style*="color: '#2a4d8f'"],
+.wf-dark [style*="color:'#2a4d8f'"],
+.wf-dark [style*="color: #2a4d8f"] {
+  color: var(--wd-cyan) !important;
+}
+.wf-dark [style*="background: '#2a4d8f'"],
+.wf-dark [style*="background:'#2a4d8f'"] {
+  background: var(--wd-cyan) !important;
+}
+
+/* ───────────── Repeating linear-gradient hatch (placeholder) ───────────── */
+.wf-dark [style*="repeating-linear-gradient"] {
+  background-color: var(--wd-elev) !important;
+}
+
+/* ───────────── Highlight backgrounds (warning yellows, soft greens etc.) ─────────────
+   Selective preservation: keep them but tint them so they read on dark. */
+.wf-dark [style*="background: '#fef9c3'"],
+.wf-dark [style*="background:'#fef9c3'"],
+.wf-dark [style*="background: #fef9c3"] { background: rgba(245, 183, 82, 0.16) !important; color: var(--wd-warm) !important; }
+.wf-dark [style*="background: '#dcfce7'"],
+.wf-dark [style*="background:'#dcfce7'"],
+.wf-dark [style*="background: #dcfce7"] { background: rgba(74, 222, 128, 0.14) !important; color: var(--wd-success) !important; }
+.wf-dark [style*="background: '#fee2e2'"],
+.wf-dark [style*="background:'#fee2e2'"],
+.wf-dark [style*="background: #fee2e2"] { background: rgba(255, 107, 122, 0.14) !important; color: var(--wd-danger) !important; }
+.wf-dark [style*="background: '#dbeafe'"],
+.wf-dark [style*="background:'#dbeafe'"],
+.wf-dark [style*="background: #dbeafe"] { background: rgba(76, 196, 255, 0.14) !important; color: var(--wd-cyan) !important; }
+.wf-dark [style*="background: '#fef3c7'"],
+.wf-dark [style*="background:'#fef3c7'"],
+.wf-dark [style*="background: #fef3c7"] { background: rgba(245, 183, 82, 0.16) !important; color: var(--wd-warm) !important; }
+
+/* OTP boxes in V2Otp — single _ characters with grey color */
+.wf-dark [style*="border: '1.5px solid #2a2a2a'"][style*="background: '#fff'"] {
+  background: var(--wd-elev) !important;
+  border-color: var(--wd-border-2) !important;
+}
+
+/* Inputs / panels labelled with placeholder text */
+.wf-dark [style*="dashed"][style*="#777"],
+.wf-dark [style*="dashed"][style*="#555"] {
+  border-color: rgba(76, 196, 255, 0.30) !important;
+  color: var(--wd-ink-3) !important;
+}
+
+/* Text decoration for line-through */
+.wf-dark [style*="text-decoration: line-through"],
+.wf-dark [style*="text-decoration:line-through"],
+.wf-dark [style*="textDecoration: 'line-through'"] {
+  text-decoration-color: var(--wd-ink-3) !important;
+}
+
+/* ───────────── Heading-like big text inside wireframes ─────────────
+   variations.jsx and screens use inline fontSize: 18-30 with 'Architects Daughter'.
+   Override font + give them ink-primary color where it makes sense. */
+.wf-dark [style*="Architects Daughter"],
+.wf-dark [style*="'Architects Daughter'"] {
+  font-family: 'Satoshi', 'Inter', sans-serif !important;
+  letter-spacing: -0.005em !important;
+}
+
+/* Bullets / dots used in the schedule and lists */
+.wf-dark [style*="border-radius: '50%'"][style*="background: '#1a1a1a'"],
+.wf-dark [style*="borderRadius: '50%'"][style*="background: '#1a1a1a'"] {
+  background: var(--wd-cyan) !important;
+}
+
+/* Tables — borderless modern */
+.wf-dark table { color: var(--wd-ink); }
+.wf-dark thead { color: var(--wd-ink-3); }
