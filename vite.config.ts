@@ -15,6 +15,7 @@ export default defineConfig({
         fr: resolve(__dirname, 'fr/index.html'),
         fr2: resolve(__dirname, 'fr2/index.html'),
         fr3: resolve(__dirname, 'fr3/index.html'),
+        fr4: resolve(__dirname, 'fr4/index.html'),
       },
     },
   },
