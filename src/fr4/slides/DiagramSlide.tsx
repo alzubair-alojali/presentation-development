@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import { motion } from 'framer-motion';
 import { SlideFrame } from '../../components/SlideFrame';
 import { fadeUp } from '../../lib/motion';
+import { ZoomableDiagram } from '../components/ZoomableDiagram';
 
 interface Props {
   id: string;
@@ -12,10 +13,6 @@ interface Props {
   diagram: ReactNode;
 }
 
-/**
- * Generic frame for a diagram slide — kicker, title, contextual tags +
- * description, and the SVG diagram itself, scaled to fit.
- */
 export function DiagramSlide({ id, kicker, title, tags, description, diagram }: Props) {
   return (
     <SlideFrame id={id} ariaLabel={title} kicker={kicker} title={title}>
@@ -44,7 +41,15 @@ export function DiagramSlide({ id, kicker, title, tags, description, diagram }: 
             )}
           </div>
         )}
-        <div className="flex-1 min-h-0 flex items-center justify-center">{diagram}</div>
+        <div
+          className="flex-1 min-h-0 rounded-lg overflow-hidden"
+          style={{
+            background: 'rgba(255,255,255,0.015)',
+            border: '1px solid rgba(255,255,255,0.05)',
+          }}
+        >
+          <ZoomableDiagram label={title}>{diagram}</ZoomableDiagram>
+        </div>
       </motion.div>
     </SlideFrame>
   );
