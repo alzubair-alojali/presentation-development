@@ -74,7 +74,7 @@ export function Agenda() {
           <span className="text-ink-tertiary uppercase tracking-[0.18em] text-[10.5px] font-semibold mr-3">Total</span>
           157 requirements · 123 P0 · 34 P1 · 6 weeks
         </div>
-        <div className="font-mono text-[11px] text-ink-tertiary tabular">1 Jun → 12 Jul 2026</div>
+        <div className="font-mono text-[11px] text-ink-tertiary tabular">21 May → 1 Jul 2026</div>
       </motion.div>
     </SlideFrame>
   );

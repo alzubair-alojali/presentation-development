@@ -31,7 +31,7 @@ export function Title() {
         >
           Foundation, registration engine, and admin polish — 157 functional
           requirements scoped, prioritized, and sequenced for delivery from
-          1 Jun to 12 Jul 2026.
+          21 May to 1 Jul 2026.
         </motion.p>
 
         <motion.div

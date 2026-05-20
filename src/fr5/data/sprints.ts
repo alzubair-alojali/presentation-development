@@ -26,7 +26,7 @@ export const sprints: Sprint[] = [
   {
     num: 1,
     title: 'Foundation & Infrastructure',
-    timeframe: '1 Jun – 14 Jun 2026',
+    timeframe: '21 May – 3 Jun 2026',
     goal: 'Establish the bedrock — identity, access control, course catalog, and term lifecycle. Nothing downstream can exist without these in place.',
     total: 54,
     p0: 43,
@@ -88,7 +88,7 @@ export const sprints: Sprint[] = [
   {
     num: 2,
     title: 'Registration Engine',
-    timeframe: '15 Jun – 28 Jun 2026',
+    timeframe: '4 Jun – 17 Jun 2026',
     goal: 'Deliver the full student-to-advisor pipeline — eligibility checks, conflict detection, request submission, withdrawals and swaps, advisor review, enrollment management, and notifications.',
     total: 59,
     p0: 52,
@@ -166,7 +166,7 @@ export const sprints: Sprint[] = [
   {
     num: 3,
     title: 'Admin Tools, Timetable & Polish',
-    timeframe: '29 Jun – 12 Jul 2026',
+    timeframe: '18 Jun – 1 Jul 2026',
     goal: 'Complete the admin layer with the interactive timetable rescheduler, reporting and escalation tools, search, and all deferred P1 items from prior sprints.',
     total: 44,
     p0: 28,

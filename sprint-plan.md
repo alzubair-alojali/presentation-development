@@ -9,14 +9,14 @@
 
 | Sprint | Title | Timeframe | Duration |
 |--------|-------|-----------|----------|
-| Sprint 1 | Foundation & Infrastructure | 1 Jun – 14 Jun 2026 | 2 weeks |
-| Sprint 2 | Registration Engine | 15 Jun – 28 Jun 2026 | 2 weeks |
-| Sprint 3 | Admin Tools, Timetable & Polish | 29 Jun – 12 Jul 2026 | 2 weeks |
+| Sprint 1 | Foundation & Infrastructure | 21 May – 3 Jun 2026 | 2 weeks |
+| Sprint 2 | Registration Engine | 4 Jun – 17 Jun 2026 | 2 weeks |
+| Sprint 3 | Admin Tools, Timetable & Polish | 18 Jun – 1 Jul 2026 | 2 weeks |
 
 ---
 
 ## Sprint 1 — Foundation & Infrastructure
-**Timeframe:** 1 Jun – 14 Jun 2026
+**Timeframe:** 21 May – 3 Jun 2026
 
 **Goal:** Establish the bedrock — identity, access control, course catalog, and term lifecycle. Nothing downstream can exist without these in place.
 
@@ -123,7 +123,7 @@
 ---
 
 ## Sprint 2 — Registration Engine
-**Timeframe:** 15 Jun – 28 Jun 2026
+**Timeframe:** 4 Jun – 17 Jun 2026
 
 **Goal:** Deliver the full student-to-advisor pipeline — eligibility checks, conflict detection, request submission, withdrawals and swaps, advisor review, enrollment management, and notifications.
 
@@ -249,7 +249,7 @@
 ---
 
 ## Sprint 3 — Admin Tools, Timetable & Polish
-**Timeframe:** 29 Jun – 12 Jul 2026
+**Timeframe:** 18 Jun – 1 Jul 2026
 
 **Goal:** Complete the admin layer with the interactive timetable rescheduler, reporting and escalation tools, search, and all deferred P1 items from prior sprints.
 
@@ -337,9 +337,9 @@
 
 | Sprint | Timeframe | Requirements | P0 | P1 |
 |--------|-----------|--------------|----|----|
-| Sprint 1 — Foundation & Infrastructure | 1 Jun – 14 Jun 2026 | 54 | 43 | 11 |
-| Sprint 2 — Registration Engine | 15 Jun – 28 Jun 2026 | 59 | 52 | 7 |
-| Sprint 3 — Admin Tools, Timetable & Polish | 29 Jun – 12 Jul 2026 | 44 | 28 | 16 |
+| Sprint 1 — Foundation & Infrastructure | 21 May – 3 Jun 2026 | 54 | 43 | 11 |
+| Sprint 2 — Registration Engine | 4 Jun – 17 Jun 2026 | 59 | 52 | 7 |
+| Sprint 3 — Admin Tools, Timetable & Polish | 18 Jun – 1 Jul 2026 | 44 | 28 | 16 |
 | **Total** | **6 weeks** | **157** | **123** | **34** |
 
 ---
